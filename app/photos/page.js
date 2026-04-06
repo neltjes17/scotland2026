@@ -25,25 +25,16 @@ const TAGS = [
 
 export const dynamic = 'force-dynamic'
 
-async function getPhotos(tag) {
+async function getAllPhotos() {
   try {
-    if (tag) {
-      const result = await cld.api.resources_by_tag(tag, {
-        max_results: 200,
-        tags: true,
-        resource_type: 'image',
-      })
-      return result.resources || []
-    } else {
-      const result = await cld.api.resources({
-        type: 'upload',
-        prefix: 'scotland2026/',
-        max_results: 200,
-        tags: true,
-        resource_type: 'image',
-      })
-      return result.resources || []
-    }
+    const result = await cld.api.resources({
+      type: 'upload',
+      prefix: 'scotland2026/',
+      max_results: 200,
+      tags: true,
+      resource_type: 'image',
+    })
+    return result.resources || []
   } catch {
     return []
   }
@@ -52,7 +43,16 @@ async function getPhotos(tag) {
 export default async function PhotosPage({ searchParams }) {
   const params = await searchParams
   const currentTag = params.tag || null
-  const photos = await getPhotos(currentTag)
+  const allPhotos = await getAllPhotos()
+
+  // Derive which tags actually have photos
+  const usedTagIds = new Set(allPhotos.flatMap(p => p.tags || []))
+  const visibleTags = TAGS.filter(t => t.id === null || usedTagIds.has(t.id))
+
+  // Filter for display
+  const photos = currentTag
+    ? allPhotos.filter(p => (p.tags || []).includes(currentTag))
+    : allPhotos
 
   return (
     <main className="photos-page">
@@ -66,17 +66,19 @@ export default async function PhotosPage({ searchParams }) {
       </div>
 
       <div className="photos-container">
-        <div className="tag-filter">
-          {TAGS.map(tag => (
-            <a
-              key={tag.id || 'all'}
-              href={tag.id ? `/photos?tag=${tag.id}` : '/photos'}
-              className={`filter-btn ${currentTag === tag.id ? 'filter-btn-active' : ''}`}
-            >
-              {tag.label}
-            </a>
-          ))}
-        </div>
+        {visibleTags.length > 1 && (
+          <div className="tag-filter">
+            {visibleTags.map(tag => (
+              <a
+                key={tag.id || 'all'}
+                href={tag.id ? `/photos?tag=${tag.id}` : '/photos'}
+                className={`filter-btn ${currentTag === tag.id ? 'filter-btn-active' : ''}`}
+              >
+                {tag.label}
+              </a>
+            ))}
+          </div>
+        )}
 
         {photos.length === 0 ? (
           <div className="photos-empty">

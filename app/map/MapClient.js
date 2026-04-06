@@ -31,12 +31,12 @@ const LOCATIONS = {
   hotels: [
     {
       name: 'Hotel du Vin, St Andrews',
-      coords: [56.3412, -2.7960],
-      desc: 'Days 1–5 · Home base for the trip · The Scores, St Andrews',
+      coords: [56.3429, -2.7992],
+      desc: 'Days 1–5 · Home base for the trip · 40 The Scores, St Andrews',
     },
     {
       name: 'W Hotel Edinburgh',
-      coords: [55.9547, -3.1900],
+      coords: [55.9525, -3.1892],
       desc: 'Day 6 · 1 St Andrew Square, Edinburgh',
     },
   ],

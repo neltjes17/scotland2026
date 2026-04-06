@@ -2,45 +2,182 @@
 
 import { useEffect, useRef } from 'react'
 
+// ── All locations sourced directly from page.js ────────────────────────────
+
 const LOCATIONS = {
   golf: [
-    { name: 'North Berwick West Links', coords: [56.059, -2.719], desc: 'Day 2 · East Lothian · Links · Par 71' },
-    { name: 'The Old Course, St Andrews', coords: [56.343, -2.803], desc: 'Day 3 · Fife · Links · Par 72 · Home of Golf' },
-    { name: 'Carnoustie Championship Course', coords: [56.502, -2.717], desc: 'Day 4 · Angus · Links · Par 72 · "Car-nasty"' },
-    { name: 'Kingsbarns Golf Links', coords: [56.277, -2.662], desc: 'Day 5 · Fife · Links · Par 72 · Clifftop sea views' },
-    { name: 'Royal Troon Old Course', coords: [55.542, -4.667], desc: 'Day 6 · Ayrshire · Links · Par 71 · Open Championship venue' },
-    { name: 'Trump Turnberry — Ailsa Course', coords: [55.318, -4.844], desc: 'Day 7 · Ayrshire · Links · Par 70 · The Crown Jewel' },
-    { name: 'Haggs Castle Golf Club', coords: [55.827, -4.306], desc: 'Day 8 · Glasgow · Parkland · Par 72' },
+    {
+      name: 'Kingsbarns Golf Links',
+      coords: [56.2752, -2.6620],
+      desc: 'Day 2 (Mon) · Fife · Links · Par 72 · Tee time 9:50 AM',
+    },
+    {
+      name: 'Eden Course — St Andrews Links',
+      coords: [56.3416, -2.8165],
+      desc: 'Day 3 (Tue) · St Andrews · Links · Par 70 · Tee time 9:52 AM',
+    },
+    {
+      name: 'Castle Course — St Andrews Links',
+      coords: [56.3569, -2.7750],
+      desc: 'Day 4 (Wed) · St Andrews · Links · Par 71 · Tee time 9:30 AM · Clifftop views over St Andrews Bay',
+    },
+    {
+      name: 'The Old Course — St Andrews Links',
+      coords: [56.3432, -2.8031],
+      desc: 'Day 5 (Thu) · St Andrews · Links · Par 72 · The home of golf',
+    },
   ],
+
   hotels: [
-    { name: 'Hotel du Vin, St Andrews', coords: [56.340, -2.797], desc: 'Days 1–5 · Home base for the trip' },
-    { name: 'W Hotel Edinburgh', coords: [55.953, -3.188], desc: 'Day 7 · Check in before return flight' },
+    {
+      name: 'Hotel du Vin, St Andrews',
+      coords: [56.3412, -2.7960],
+      desc: 'Days 1–5 · Home base for the trip · The Scores, St Andrews',
+    },
+    {
+      name: 'W Hotel Edinburgh',
+      coords: [55.9547, -3.1900],
+      desc: 'Day 6 · 1 St Andrew Square, Edinburgh',
+    },
   ],
+
   activities: [
-    { name: 'St Andrews Cathedral', coords: [56.339, -2.793], desc: 'Day 1 · Ruins of Scotland\'s largest medieval church' },
-    { name: 'Fife Coastal Path', coords: [56.335, -2.785], desc: 'Day 1 · Rugged cliff walks with North Sea views' },
-    { name: 'Dirleton Castle', coords: [56.041, -2.776], desc: 'Day 2 · 13th-century castle ruin · East Lothian' },
-    { name: 'Stirling Castle', coords: [56.124, -3.947], desc: 'Day 5 · En route from Fife to Ayrshire' },
-    { name: 'Culzean Castle', coords: [55.352, -4.790], desc: 'Day 6 · Clifftop castle · Isle of Arran views' },
-    { name: 'Edinburgh Castle', coords: [55.948, -3.200], desc: 'Day 7 · Perched on Castle Rock' },
-    { name: 'Arthur\'s Seat', coords: [55.944, -3.162], desc: 'Day 7 · Extinct volcano · 360° views of Edinburgh' },
-    { name: 'The Royal Mile', coords: [55.950, -3.190], desc: 'Day 7 · Historic spine of the Old Town' },
+    // St Andrews — from itinerary & St Andrews guide
+    {
+      name: 'St Andrews Cathedral',
+      coords: [56.3394, -2.7940],
+      desc: 'St Andrews · Once the largest church in Scotland · Climb St Rule\'s Tower for panoramic views · Free entry',
+    },
+    {
+      name: 'St Andrews Castle',
+      coords: [56.3415, -2.7943],
+      desc: 'St Andrews · Bottle Dungeon & Siege Mine · 1546 siege tunnel you can walk through',
+    },
+    {
+      name: 'West Sands Beach',
+      coords: [56.3466, -2.8132],
+      desc: 'St Andrews · Famous Chariots of Fire beach · Massive flat stretch of sand',
+    },
+    {
+      name: 'The Fife Coastal Path',
+      coords: [56.3370, -2.7793],
+      desc: 'St Andrews · Rugged cliff views toward Maiden Rock · Fresh North Sea air',
+    },
+    {
+      name: 'The Pier Walk',
+      coords: [56.3400, -2.7882],
+      desc: 'St Andrews Harbour · University student tradition · Great views of the Cathedral from the water',
+    },
+    {
+      name: 'Topping & Company Booksellers',
+      coords: [56.3400, -2.7966],
+      desc: 'St Andrews · Floor-to-ceiling shelves with rolling ladders · Staff offer tea while you browse',
+    },
+    {
+      name: 'Bouquiniste — Market Street',
+      coords: [56.3402, -2.7958],
+      desc: 'St Andrews · Tiny second-hand bookshop · Rare editions, old maps, and postcards',
+    },
+    // Edinburgh — from itinerary & Edinburgh guide
+    {
+      name: 'Edinburgh Castle',
+      coords: [55.9486, -3.1999],
+      desc: 'Edinburgh · Perched on Castle Rock · Catch the One O\'Clock Gun (daily except Sundays)',
+    },
+    {
+      name: 'The Royal Mile',
+      coords: [55.9497, -3.1888],
+      desc: 'Edinburgh · Historic spine from the Castle to Holyroodhouse · Find the Heart of Midlothian mosaic',
+    },
+    {
+      name: "Arthur's Seat",
+      coords: [55.9445, -3.1616],
+      desc: 'Edinburgh · Extinct volcano · 45–60 min hike · Best 360° views of Edinburgh and the sea',
+    },
+    {
+      name: 'Armchair Books — West Port',
+      coords: [55.9468, -3.1970],
+      desc: 'Edinburgh · "Nearly alphabetized chaos" of second-hand books · Near the Grassmarket',
+    },
+    {
+      name: "John Kay's Shop — Victoria Street",
+      coords: [55.9479, -3.1944],
+      desc: 'Edinburgh · Unique prints and Scottish interest books · One of the world\'s most photographed streets',
+    },
   ],
+
   restaurants: [
-    { name: 'Fisher & Donaldson', coords: [56.341, -2.800], desc: 'Day 1 · St Andrews · Famous fudge doughnuts' },
-    { name: 'The Criterion', coords: [56.340, -2.796], desc: 'Day 1 · Welcome dinner · Pies & pints' },
-    { name: 'North Berwick Golf Club Clubhouse', coords: [56.060, -2.716], desc: 'Day 2 · Lunch with Firth of Forth views' },
-    { name: 'The Grange Inn', coords: [56.338, -2.778], desc: 'Day 3 · Dinner · St Andrews' },
-    { name: 'R&A Clubhouse, St Andrews', coords: [56.344, -2.802], desc: 'Day 3 · Post-round lunch' },
-    { name: 'Carnoustie Golf Hotel', coords: [56.503, -2.718], desc: 'Day 4 · Lunch' },
-    { name: 'North Point Café', coords: [56.277, -2.662], desc: 'Day 5 · Lunch after Kingsbarns' },
-    { name: 'The Grand Tea Room, Turnberry', coords: [55.319, -4.843], desc: 'Day 7 · Lunch at Turnberry Hotel' },
-    { name: 'Oink — Edinburgh', coords: [55.951, -3.192], desc: 'Day 7 · Lunch · Hog roast rolls' },
-    { name: 'The White Hart Inn', coords: [55.948, -3.193], desc: 'Day 7 · Dinner · 500-year-old pub' },
+    // St Andrews — itinerary & St Andrews food guide
+    {
+      name: 'Fisher & Donaldson — Church Street',
+      coords: [56.3400, -2.7973],
+      desc: 'St Andrews · Day 1 · Famous fudge doughnut · A St Andrews rite of passage',
+    },
+    {
+      name: 'The Criterion',
+      coords: [56.3398, -2.7985],
+      desc: 'St Andrews · Day 1 dinner · Pies & pints in a historic cozy pub',
+    },
+    {
+      name: 'North Point Café',
+      coords: [56.3413, -2.7927],
+      desc: 'St Andrews · Day 2 lunch · Smoked salmon bagels, Scottish pancakes, homemade soups',
+    },
+    {
+      name: 'The Tailend',
+      coords: [56.3407, -2.7958],
+      desc: 'St Andrews · Day 2 dinner · Authentic fish & chips · Casual fresh seafood',
+    },
+    {
+      name: 'The Cottage Kitchen',
+      coords: [56.3398, -2.7975],
+      desc: 'St Andrews · Day 3 lunch · Homemade sausage rolls, seasonal tarts, freshly baked scones',
+    },
+    {
+      name: 'The Grange Inn',
+      coords: [56.3350, -2.8050],
+      desc: 'St Andrews · Day 3 dinner · Seasonal Fife larder menu · Venison, Arbroath smokies, local seafood',
+    },
+    {
+      name: 'The Jigger Inn',
+      coords: [56.3424, -2.8048],
+      desc: 'St Andrews · Day 4 dinner · Classic 19th-century pub · Cozy fireplace · Steeped in Old Course history',
+    },
+    {
+      name: "Forgan's",
+      coords: [56.3400, -2.7970],
+      desc: 'St Andrews · Day 5 celebration dinner · Great for groups · Rustic barn atmosphere · Ceilidh nights',
+    },
+    {
+      name: 'Balgrove Larder',
+      coords: [56.3580, -2.8700],
+      desc: 'Near St Andrews · Farm shop & restaurant · Steak burgers, seasonal produce, great coffee',
+    },
+    // Edinburgh — itinerary & Edinburgh food guide
+    {
+      name: 'Oink',
+      coords: [55.9479, -3.1948],
+      desc: 'Edinburgh · Day 6 lunch · Scottish hog roast rolls with crackling, sage & onion stuffing, or haggis',
+    },
+    {
+      name: "Makar's Mash Bar",
+      coords: [55.9491, -3.1862],
+      desc: 'Edinburgh · Lunch · Nine varieties of mashed tatties paired with slow-cooked lamb, sausage, or wild boar',
+    },
+    {
+      name: 'The White Hart Inn',
+      coords: [55.9470, -3.1939],
+      desc: 'Edinburgh · Dinner · Fish & chips, steak pies, and haggis towers in a 500-year-old pub',
+    },
+    {
+      name: 'Howies — Victoria Street',
+      coords: [55.9475, -3.1942],
+      desc: 'Edinburgh · Day 6 dinner · Seasonal Scottish produce · Glen Lyon venison, Loch Duart salmon, cranachan',
+    },
   ],
 }
 
-function createMarker(L, emoji, colorClass) {
+function createIcon(L, emoji, colorClass) {
   return L.divIcon({
     html: `<div class="map-marker ${colorClass}">${emoji}</div>`,
     className: '',
@@ -57,7 +194,6 @@ export default function MapClient() {
   useEffect(() => {
     if (mapRef.current || !containerRef.current) return
 
-    // Inject Leaflet CSS
     if (!document.getElementById('leaflet-css')) {
       const link = document.createElement('link')
       link.id = 'leaflet-css'
@@ -68,7 +204,7 @@ export default function MapClient() {
 
     function init() {
       const L = window.L
-      const map = L.map(containerRef.current, { center: [56.05, -3.9], zoom: 7 })
+      const map = L.map(containerRef.current, { center: [56.18, -3.0], zoom: 9 })
       mapRef.current = map
 
       L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -77,10 +213,10 @@ export default function MapClient() {
       }).addTo(map)
 
       const icons = {
-        golf:       createMarker(L, '⛳', 'marker-golf'),
-        hotels:     createMarker(L, '🏨', 'marker-hotel'),
-        activities: createMarker(L, '🏰', 'marker-activity'),
-        restaurants: createMarker(L, '🍽', 'marker-restaurant'),
+        golf:        createIcon(L, '⛳', 'marker-golf'),
+        hotels:      createIcon(L, '🏨', 'marker-hotel'),
+        activities:  createIcon(L, '🏰', 'marker-activity'),
+        restaurants: createIcon(L, '🍽', 'marker-restaurant'),
       }
 
       Object.entries(LOCATIONS).forEach(([category, places]) => {
@@ -112,10 +248,10 @@ export default function MapClient() {
   return (
     <div className="map-tab-panel">
       <div className="map-legend">
-        <span className="legend-item"><span className="legend-dot golf" />  Golf Courses</span>
-        <span className="legend-item"><span className="legend-dot hotel" />  Hotels</span>
-        <span className="legend-item"><span className="legend-dot activity" />  Sightseeing</span>
-        <span className="legend-item"><span className="legend-dot restaurant" />  Restaurants &amp; Dining</span>
+        <span className="legend-item"><span className="legend-dot golf" /> Golf Courses</span>
+        <span className="legend-item"><span className="legend-dot hotel" /> Hotels</span>
+        <span className="legend-item"><span className="legend-dot activity" /> Sightseeing</span>
+        <span className="legend-item"><span className="legend-dot restaurant" /> Restaurants &amp; Dining</span>
       </div>
       <div ref={containerRef} id="trip-map" />
     </div>

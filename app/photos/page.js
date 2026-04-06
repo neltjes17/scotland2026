@@ -62,6 +62,7 @@ export default async function PhotosPage({ searchParams }) {
           {photos.length} photo{photos.length !== 1 ? 's' : ''}
           {currentTag ? ` tagged "${TAGS.find(t => t.id === currentTag)?.label || currentTag}"` : ''}
         </p>
+        <a href="/upload" className="gallery-upload-btn">Upload Photos</a>
       </div>
 
       <div className="photos-container">

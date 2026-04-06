@@ -433,6 +433,26 @@ body {
   margin-top: 0.5rem;
 }
 
+.gallery-upload-btn {
+  display: inline-block;
+  margin-top: 1.25rem;
+  padding: 0.6rem 1.5rem;
+  background: var(--gold);
+  color: var(--green-dark);
+  text-decoration: none;
+  font-family: Georgia, serif;
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  border-radius: 6px;
+  transition: background 0.15s ease, transform 0.1s ease;
+}
+
+.gallery-upload-btn:hover {
+  background: var(--gold-light);
+  transform: translateY(-1px);
+}
+
 .photos-container {
   max-width: 1100px;
   margin: 0 auto;

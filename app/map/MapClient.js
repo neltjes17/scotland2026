@@ -9,7 +9,7 @@ const LOCATIONS = {
     {
       name: 'Kingsbarns Golf Links',
       coords: [56.2979, -2.6474],
-      desc: 'Day 2 (Mon) · Fife · Links · Par 72 · Tee time 9:50 AM',
+      desc: 'Day 2 (Mon) · Fife · Links · Par 72 · Tee time 12:40 PM',
     },
     {
       name: 'Eden Course — St Andrews Links',

@@ -189,7 +189,7 @@ export default function HomePage() {
                     <img className="activity-thumb" src="https://images.squarespace-cdn.com/content/v1/6710e3464bdab217a2de96d7/764d4a70-dca6-40c2-93e0-f8044f44456c/Kingsbarns+Clubhouse+%26+Gorse.jpg" alt="Kingsbarns Golf Links" />
                     <div>
                       <strong><a href="https://www.kingsbarns.com/" target="_blank" rel="noopener">Kingsbarns Golf Links</a></strong>
-                      <p>Tee time 9:50 AM &middot; Stunning clifftop links with sea views &middot; Par 72</p>
+                      <p>Tee time 12:40 PM &middot; Stunning clifftop links with sea views &middot; Par 72</p>
                     </div>
                   </li>
                   <li className="activity food">

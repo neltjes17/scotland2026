@@ -473,7 +473,7 @@ export default function HomePage() {
                   <div className="course-rank">Mon</div>
                   <div className="course-info">
                     <h4><a href="https://www.kingsbarns.com/" target="_blank" rel="noopener">Kingsbarns Golf Links</a></h4>
-                    <p>Fife &middot; Links &middot; Par 72 &middot; Tee time 9:50 AM</p>
+                    <p>Fife &middot; Links &middot; Par 72 &middot; Tee time 12:40 PM</p>
                   </div>
                 </div>
               </div>

@@ -306,84 +306,102 @@
           </div>
         </div>
         <div class="day-body">
-          <ul class="day-activities">
-            <li class="activity travel">
-              <span class="activity-icon">&#128663;</span>
-              <div>
-                <strong>Check out of Hotel du Vin · Drive to Edinburgh</strong>
-                <p>~1h 15m · Easy morning drive</p>
-              </div>
-            </li>
-            <li class="activity sightseeing">
-              <span class="activity-icon">&#127964;</span>
-              <div>
-                <strong>Edinburgh Castle</strong>
-                <p>Perched on Castle Rock — non-negotiable for first-timers · Try to catch the One O'Clock Gun (fired daily except Sundays)</p>
-              </div>
-            </li>
-            <li class="activity sightseeing">
-              <span class="activity-icon">&#127964;</span>
-              <div>
-                <strong>The Royal Mile</strong>
-                <p>Historic spine from the Castle to the Palace of Holyroodhouse · Look for the Heart of Midlothian mosaic near St. Giles' Cathedral — locals spit on it for luck</p>
-              </div>
-            </li>
-            <li class="activity sightseeing">
-              <span class="activity-icon">&#127964;</span>
-              <div>
-                <strong>Arthur's Seat</strong>
-                <p>Extinct volcano in the city center · 45–60 min hike to the top · Best 360° views of Edinburgh and the sea</p>
-              </div>
-            </li>
-            <li class="activity sightseeing">
-              <span class="activity-icon">&#128218;</span>
-              <div>
-                <strong>Armchair Books — West Port</strong>
-                <p>Quintessential Edinburgh bookshop · "Nearly alphabetized chaos" of second-hand books · Perfect stop after the Castle near the Grassmarket</p>
-              </div>
-            </li>
-            <li class="activity sightseeing">
-              <span class="activity-icon">&#128218;</span>
-              <div>
-                <strong>John Kay's Shop — Victoria Street</strong>
-                <p>Tiny and charming on one of the world's most photographed streets · Unique prints and Scottish interest books</p>
-              </div>
-            </li>
-            <li class="activity food">
-              <span class="activity-icon">&#127869;</span>
-              <div>
-                <strong>Lunch Option — Oink</strong>
-                <p>Traditional Scottish hog roast rolls with crackling, sage &amp; onion stuffing, or haggis</p>
-              </div>
-            </li>
-            <li class="activity food">
-              <span class="activity-icon">&#127869;</span>
-              <div>
-                <strong>Lunch Option — Makar's Mash Bar</strong>
-                <p>Nine varieties of mashed tatties paired with mains like slow-cooked lamb, beef sausage, or wild boar</p>
-              </div>
-            </li>
-            <li class="activity hotel">
-              <span class="activity-icon">&#127968;</span>
-              <div>
-                <strong>Check in — <a href="https://www.marriott.com/en-us/hotels/ediwh-w-edinburgh/photos/" target="_blank" rel="noopener">W Hotel Edinburgh</a></strong>
-              </div>
-            </li>
-            <li class="activity food">
-              <span class="activity-icon">&#127869;</span>
-              <div>
-                <strong>Dinner Option — The White Hart Inn</strong>
-                <p>Fish &amp; chips, steak pies, and haggis towers in a 500-year-old pub setting</p>
-              </div>
-            </li>
-            <li class="activity food">
-              <span class="activity-icon">&#127869;</span>
-              <div>
-                <strong>Dinner Option — Howies (Victoria Street)</strong>
-                <p>Seasonal Scottish produce · Glen Lyon venison, Loch Duart salmon, cranachan for dessert</p>
-              </div>
-            </li>
-          </ul>
+          <div class="inner-tabs">
+            <button class="inner-tab-btn active" data-inner-tab="edin-itinerary">Itinerary</button>
+            <button class="inner-tab-btn" data-inner-tab="edin-activities">Activities</button>
+            <button class="inner-tab-btn" data-inner-tab="edin-bookstores">Book Stores</button>
+          </div>
+
+          <div id="edin-itinerary" class="inner-tab-panel active">
+            <ul class="day-activities">
+              <li class="activity travel">
+                <span class="activity-icon">&#128663;</span>
+                <div>
+                  <strong>Check out of Hotel du Vin · Drive to Edinburgh</strong>
+                  <p>~1h 15m · Easy morning drive</p>
+                </div>
+              </li>
+              <li class="activity hotel">
+                <span class="activity-icon">&#127968;</span>
+                <div>
+                  <strong>Check in — <a href="https://www.marriott.com/en-us/hotels/ediwh-w-edinburgh/photos/" target="_blank" rel="noopener">W Hotel Edinburgh</a></strong>
+                </div>
+              </li>
+              <li class="activity food">
+                <span class="activity-icon">&#127869;</span>
+                <div>
+                  <strong>Lunch Option — Oink</strong>
+                  <p>Traditional Scottish hog roast rolls with crackling, sage &amp; onion stuffing, or haggis</p>
+                </div>
+              </li>
+              <li class="activity food">
+                <span class="activity-icon">&#127869;</span>
+                <div>
+                  <strong>Lunch Option — Makar's Mash Bar</strong>
+                  <p>Nine varieties of mashed tatties paired with mains like slow-cooked lamb, beef sausage, or wild boar</p>
+                </div>
+              </li>
+              <li class="activity food">
+                <span class="activity-icon">&#127869;</span>
+                <div>
+                  <strong>Dinner Option — The White Hart Inn</strong>
+                  <p>Fish &amp; chips, steak pies, and haggis towers in a 500-year-old pub setting</p>
+                </div>
+              </li>
+              <li class="activity food">
+                <span class="activity-icon">&#127869;</span>
+                <div>
+                  <strong>Dinner Option — Howies (Victoria Street)</strong>
+                  <p>Seasonal Scottish produce · Glen Lyon venison, Loch Duart salmon, cranachan for dessert</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <div id="edin-activities" class="inner-tab-panel">
+            <ul class="day-activities">
+              <li class="activity sightseeing">
+                <span class="activity-icon">&#127964;</span>
+                <div>
+                  <strong>Edinburgh Castle</strong>
+                  <p>Perched on Castle Rock — non-negotiable for first-timers · Try to catch the One O'Clock Gun (fired daily except Sundays)</p>
+                </div>
+              </li>
+              <li class="activity sightseeing">
+                <span class="activity-icon">&#127964;</span>
+                <div>
+                  <strong>The Royal Mile</strong>
+                  <p>Historic spine from the Castle to the Palace of Holyroodhouse · Look for the Heart of Midlothian mosaic near St. Giles' Cathedral — locals spit on it for luck</p>
+                </div>
+              </li>
+              <li class="activity sightseeing">
+                <span class="activity-icon">&#127964;</span>
+                <div>
+                  <strong>Arthur's Seat</strong>
+                  <p>Extinct volcano in the city center · 45–60 min hike to the top · Best 360° views of Edinburgh and the sea</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <div id="edin-bookstores" class="inner-tab-panel">
+            <ul class="day-activities">
+              <li class="activity sightseeing">
+                <span class="activity-icon">&#128218;</span>
+                <div>
+                  <strong>Armchair Books — West Port</strong>
+                  <p>Quintessential Edinburgh bookshop · "Nearly alphabetized chaos" of second-hand books · Perfect stop after the Castle near the Grassmarket</p>
+                </div>
+              </li>
+              <li class="activity sightseeing">
+                <span class="activity-icon">&#128218;</span>
+                <div>
+                  <strong>John Kay's Shop — Victoria Street</strong>
+                  <p>Tiny and charming on one of the world's most photographed streets · Unique prints and Scottish interest books</p>
+                </div>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
 
@@ -512,6 +530,18 @@
   </footer>
 
   <script>
+    // Inner tabs (Day 6 Edinburgh)
+    document.querySelectorAll('.inner-tab-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const card = btn.closest('.day-body');
+        card.querySelectorAll('.inner-tab-btn').forEach(b => b.classList.remove('active'));
+        card.querySelectorAll('.inner-tab-panel').forEach(p => p.classList.remove('active'));
+        btn.classList.add('active');
+        document.getElementById(btn.dataset.innerTab).classList.add('active');
+      });
+    });
+
+    // Page-level tabs
     const buttons = document.querySelectorAll('.tab-btn');
     const panels  = document.querySelectorAll('.tab-panel');
 

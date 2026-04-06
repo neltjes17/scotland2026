@@ -442,6 +442,39 @@ body {
   margin-top: 0.15rem;
 }
 
+/* ── Inner Tabs (Day Cards) ── */
+.inner-tabs {
+  display: flex;
+  gap: 0.25rem;
+  margin-bottom: 1.1rem;
+  border-bottom: 2px solid var(--gray-mid);
+}
+
+.inner-tab-btn {
+  background: none;
+  border: none;
+  font-family: Georgia, serif;
+  font-size: 0.82rem;
+  letter-spacing: 0.05em;
+  color: var(--gray-text);
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  border-bottom: 3px solid transparent;
+  margin-bottom: -2px;
+  transition: color 0.15s, border-color 0.15s;
+}
+
+.inner-tab-btn:hover { color: var(--green-mid); }
+
+.inner-tab-btn.active {
+  color: var(--green-dark);
+  font-weight: 700;
+  border-bottom-color: var(--gold);
+}
+
+.inner-tab-panel { display: none; }
+.inner-tab-panel.active { display: block; }
+
 /* ── Footer ── */
 .site-footer {
   background: var(--green-dark);

@@ -11,6 +11,9 @@ const TAGS = [
   { id: null, label: 'All Photos' },
   { id: 'st-andrews', label: 'St Andrews' },
   { id: 'kingsbarns', label: 'Kingsbarns' },
+  { id: 'eden-course', label: 'Eden Course' },
+  { id: 'castle-course', label: 'Castle Course' },
+  { id: 'old-course', label: 'Old Course' },
   { id: 'carnoustie', label: 'Carnoustie' },
   { id: 'royal-troon', label: 'Royal Troon' },
   { id: 'turnberry', label: 'Turnberry' },
@@ -18,7 +21,7 @@ const TAGS = [
   { id: 'haggs-castle', label: 'Haggs Castle' },
   { id: 'edinburgh', label: 'Edinburgh' },
   { id: 'birds', label: 'Birds & Wildlife' },
-  { id: 'food', label: 'Food & Drink' },
+  { id: 'food', label: 'Food' },
   { id: 'scenery', label: 'Scenery' },
   { id: 'people', label: 'People' },
 ]

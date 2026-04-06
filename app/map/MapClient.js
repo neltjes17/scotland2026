@@ -13,17 +13,17 @@ const LOCATIONS = {
     },
     {
       name: 'Eden Course — St Andrews Links',
-      coords: [56.3500, -2.8300],
+      coords: [56.3474, -2.8234],
       desc: 'Day 3 (Tue) · St Andrews · Links · Par 70 · Tee time 9:52 AM',
     },
     {
       name: 'Castle Course — St Andrews Links',
-      coords: [56.3280, -2.7620],
+      coords: [56.3277, -2.7542],
       desc: 'Day 4 (Wed) · St Andrews · Links · Par 71 · Tee time 9:30 AM · Clifftop views over St Andrews Bay',
     },
     {
       name: 'The Old Course — St Andrews Links',
-      coords: [56.3515, -2.8161],
+      coords: [56.3432, -2.8031],
       desc: 'Day 5 (Thu) · St Andrews · Links · Par 72 · The home of golf',
     },
   ],

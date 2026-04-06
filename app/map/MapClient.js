@@ -110,68 +110,68 @@ const LOCATIONS = {
     // St Andrews — itinerary & St Andrews food guide
     {
       name: 'Fisher & Donaldson — Church Street',
-      coords: [56.3400, -2.7973],
+      coords: [56.3403, -2.7971],
       desc: 'St Andrews · Day 1 · Famous fudge doughnut · A St Andrews rite of passage',
     },
     {
       name: 'The Criterion',
-      coords: [56.3398, -2.7985],
+      coords: [56.3383, -2.7978],
       desc: 'St Andrews · Day 1 dinner · Pies & pints in a historic cozy pub',
     },
     {
       name: 'North Point Café',
-      coords: [56.3413, -2.7927],
+      coords: [56.3413, -2.7924],
       desc: 'St Andrews · Day 2 lunch · Smoked salmon bagels, Scottish pancakes, homemade soups',
     },
     {
       name: 'The Tailend',
-      coords: [56.3407, -2.7958],
+      coords: [56.3400, -2.7985],
       desc: 'St Andrews · Day 2 dinner · Authentic fish & chips · Casual fresh seafood',
     },
     {
       name: 'The Cottage Kitchen',
-      coords: [56.3398, -2.7975],
+      coords: [56.33995, -2.79635],
       desc: 'St Andrews · Day 3 lunch · Homemade sausage rolls, seasonal tarts, freshly baked scones',
     },
     {
       name: 'The Grange Inn',
-      coords: [56.3350, -2.8050],
+      coords: [56.32062, -2.77977],
       desc: 'St Andrews · Day 3 dinner · Seasonal Fife larder menu · Venison, Arbroath smokies, local seafood',
     },
     {
       name: 'The Jigger Inn',
-      coords: [56.3424, -2.8048],
+      coords: [56.3467, -2.8094],
       desc: 'St Andrews · Day 4 dinner · Classic 19th-century pub · Cozy fireplace · Steeped in Old Course history',
     },
     {
       name: "Forgan's",
-      coords: [56.3400, -2.7970],
+      coords: [56.3401, -2.7975],
       desc: 'St Andrews · Day 5 celebration dinner · Great for groups · Rustic barn atmosphere · Ceilidh nights',
     },
     {
       name: 'Balgrove Larder',
-      coords: [56.3580, -2.8700],
+      coords: [56.3497, -2.8245],
       desc: 'Near St Andrews · Farm shop & restaurant · Steak burgers, seasonal produce, great coffee',
     },
     // Edinburgh — itinerary & Edinburgh food guide
     {
       name: 'Oink',
-      coords: [55.9479, -3.1948],
+      coords: [55.9480, -3.1936],
       desc: 'Edinburgh · Day 6 lunch · Scottish hog roast rolls with crackling, sage & onion stuffing, or haggis',
     },
     {
       name: "Makar's Mash Bar",
-      coords: [55.9491, -3.1862],
+      coords: [55.9497, -3.1942],
       desc: 'Edinburgh · Lunch · Nine varieties of mashed tatties paired with slow-cooked lamb, sausage, or wild boar',
     },
     {
       name: 'The White Hart Inn',
-      coords: [55.9470, -3.1939],
+      coords: [55.94750, -3.19680],
       desc: 'Edinburgh · Dinner · Fish & chips, steak pies, and haggis towers in a 500-year-old pub',
     },
     {
       name: 'Howies — Victoria Street',
-      coords: [55.9475, -3.1942],
+      coords: [55.94888, -3.19344],
       desc: 'Edinburgh · Day 6 dinner · Seasonal Scottish produce · Glen Lyon venison, Loch Duart salmon, cranachan',
     },
   ],

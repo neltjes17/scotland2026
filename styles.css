@@ -29,7 +29,7 @@ body {
 /* ── Hero ── */
 .hero {
   position: relative;
-  height: 480px;
+  height: 560px;
   background:
     linear-gradient(160deg, #0d2b1e 0%, #1e4d35 40%, #2d6a4f 70%, #1a3a4a 100%);
   display: flex;

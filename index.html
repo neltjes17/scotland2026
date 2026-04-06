@@ -469,6 +469,12 @@
       <section class="guide-section">
         <h2 class="section-title">St. Andrews Guide</h2>
 
+        <div class="inner-tabs">
+          <button class="inner-tab-btn active" data-target="sa-food">Food</button>
+          <button class="inner-tab-btn" data-target="sa-activities">Activities</button>
+        </div>
+
+        <div id="sa-food" class="inner-tab-panel active">
         <div class="guide-group">
           <h3 class="guide-group-title">&#9749; Snacks &amp; Treats</h3>
           <ul class="guide-list">
@@ -543,6 +549,9 @@
           </ul>
         </div>
       </section>
+        </div><!-- /#sa-food -->
+
+        <div id="sa-activities" class="inner-tab-panel">
         <div class="guide-group">
           <h3 class="guide-group-title">&#128218; Bookshops</h3>
           <ul class="guide-list">
@@ -602,6 +611,8 @@
             </li>
           </ul>
         </div>
+
+        </div><!-- /#sa-activities -->
 
       </section>
     </div><!-- /#tab-standrews -->
@@ -668,6 +679,18 @@
   </footer>
 
   <script>
+    // Inner tabs (St. Andrews Food/Activities)
+    document.querySelectorAll('.inner-tab-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const container = btn.closest('.guide-section, .day-body');
+        container.querySelectorAll('.inner-tab-btn').forEach(b => b.classList.remove('active'));
+        container.querySelectorAll('.inner-tab-panel').forEach(p => p.classList.remove('active'));
+        btn.classList.add('active');
+        const target = btn.dataset.target || btn.dataset.innerTab;
+        document.getElementById(target).classList.add('active');
+      });
+    });
+
     const buttons = document.querySelectorAll('.tab-btn');
     const panels  = document.querySelectorAll('.tab-panel');
 

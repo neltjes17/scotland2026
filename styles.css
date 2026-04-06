@@ -96,6 +96,60 @@ body {
   letter-spacing: 0.1em;
 }
 
+/* ── Tab Nav ── */
+.tab-nav {
+  background: var(--green-dark);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.2);
+}
+
+.tab-nav-inner {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  display: flex;
+  gap: 0.25rem;
+}
+
+.tab-btn {
+  background: none;
+  border: none;
+  color: rgba(255,255,255,0.6);
+  font-family: Georgia, serif;
+  font-size: 0.9rem;
+  letter-spacing: 0.06em;
+  padding: 1rem 1.4rem;
+  cursor: pointer;
+  border-bottom: 3px solid transparent;
+  transition: color 0.2s, border-color 0.2s;
+}
+
+.tab-btn:hover {
+  color: rgba(255,255,255,0.9);
+}
+
+.tab-btn.active {
+  color: var(--gold-light);
+  border-bottom-color: var(--gold);
+}
+
+.tab-panel {
+  display: none;
+}
+
+.tab-panel.active {
+  display: block;
+}
+
+.gallery-placeholder {
+  color: var(--gray-text);
+  font-style: italic;
+  padding: 3rem 0;
+  text-align: center;
+}
+
 /* ── Container ── */
 .container {
   max-width: 900px;

@@ -322,12 +322,28 @@ body {
   gap: 1rem;
   background: var(--white);
   border-radius: 10px;
-  padding: 0.9rem 1.2rem;
+  overflow: hidden;
+  padding: 0;
   box-shadow: 0 2px 10px rgba(0,0,0,0.07);
   transition: transform 0.15s ease;
 }
 
 .course-card:hover { transform: translateX(4px); }
+
+.course-img {
+  width: 140px;
+  height: 90px;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.course-card-body {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.9rem 1.2rem;
+  flex: 1;
+}
 
 .course-rank {
   width: 2.2rem;

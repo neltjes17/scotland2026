@@ -8,22 +8,22 @@ const LOCATIONS = {
   golf: [
     {
       name: 'Kingsbarns Golf Links',
-      coords: [56.2752, -2.6620],
+      coords: [56.2979, -2.6474],
       desc: 'Day 2 (Mon) · Fife · Links · Par 72 · Tee time 9:50 AM',
     },
     {
       name: 'Eden Course — St Andrews Links',
-      coords: [56.3416, -2.8165],
+      coords: [56.3500, -2.8300],
       desc: 'Day 3 (Tue) · St Andrews · Links · Par 70 · Tee time 9:52 AM',
     },
     {
       name: 'Castle Course — St Andrews Links',
-      coords: [56.3569, -2.7750],
+      coords: [56.3280, -2.7620],
       desc: 'Day 4 (Wed) · St Andrews · Links · Par 71 · Tee time 9:30 AM · Clifftop views over St Andrews Bay',
     },
     {
       name: 'The Old Course — St Andrews Links',
-      coords: [56.3432, -2.8031],
+      coords: [56.3515, -2.8161],
       desc: 'Day 5 (Thu) · St Andrews · Links · Par 72 · The home of golf',
     },
   ],

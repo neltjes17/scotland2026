@@ -29,7 +29,7 @@ body {
 /* ── Hero ── */
 .hero {
   position: relative;
-  height: 480px;
+  height: 360px;
   background:
     linear-gradient(160deg, #0d2b1e 0%, #1e4d35 40%, #2d6a4f 70%, #1a3a4a 100%);
   display: flex;
@@ -53,15 +53,6 @@ body {
     );
 }
 
-.hero::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 120px;
-  background: linear-gradient(to bottom, transparent, var(--cream));
-}
 
 .hero-content {
   position: relative;
@@ -96,11 +87,65 @@ body {
   letter-spacing: 0.1em;
 }
 
+/* ── Tab Nav ── */
+.tab-nav {
+  background: var(--green-dark);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.2);
+}
+
+.tab-nav-inner {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  display: flex;
+  gap: 0.25rem;
+}
+
+.tab-btn {
+  background: none;
+  border: none;
+  color: rgba(255,255,255,0.6);
+  font-family: Georgia, serif;
+  font-size: 0.9rem;
+  letter-spacing: 0.06em;
+  padding: 1rem 1.4rem;
+  cursor: pointer;
+  border-bottom: 3px solid transparent;
+  transition: color 0.2s, border-color 0.2s;
+}
+
+.tab-btn:hover {
+  color: rgba(255,255,255,0.9);
+}
+
+.tab-btn.active {
+  color: var(--gold-light);
+  border-bottom-color: var(--gold);
+}
+
+.tab-panel {
+  display: none;
+}
+
+.tab-panel.active {
+  display: block;
+}
+
+.gallery-placeholder {
+  color: var(--gray-text);
+  font-style: italic;
+  padding: 3rem 0;
+  text-align: center;
+}
+
 /* ── Container ── */
 .container {
   max-width: 900px;
   margin: 0 auto;
-  padding: 0 1.5rem 4rem;
+  padding: 2.5rem 1.5rem 4rem;
 }
 
 /* ── Section Title ── */
@@ -276,11 +321,31 @@ body {
   margin-top: 0.1rem;
 }
 
+.activity-thumb {
+  width: 80px;
+  height: 54px;
+  object-fit: cover;
+  border-radius: 6px;
+  flex-shrink: 0;
+  margin-top: 0.1rem;
+}
+
 .activity div strong {
   display: block;
   font-size: 0.97rem;
   color: var(--green-dark);
   font-weight: 700;
+}
+
+.activity div strong a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: var(--gold);
+  text-underline-offset: 3px;
+}
+
+.activity div strong a:hover {
+  color: var(--green-mid);
 }
 
 .activity div p {
@@ -300,32 +365,53 @@ body {
 .courses-summary { margin-bottom: 3rem; }
 
 .courses-grid {
-  display: flex;
-  flex-direction: column;
-  gap: 0.7rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.25rem;
+}
+
+@media (max-width: 600px) {
+  .courses-grid { grid-template-columns: 1fr; }
 }
 
 .course-card {
   display: flex;
-  align-items: center;
-  gap: 1rem;
+  flex-direction: column;
   background: var(--white);
   border-radius: 10px;
-  padding: 0.9rem 1.2rem;
+  overflow: hidden;
   box-shadow: 0 2px 10px rgba(0,0,0,0.07);
-  transition: transform 0.15s ease;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.course-card:hover { transform: translateX(4px); }
+.course-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.13);
+}
+
+.course-img {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  display: block;
+}
+
+.course-card-body {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 1.2rem;
+  flex: 1;
+}
 
 .course-rank {
-  width: 2.2rem;
-  height: 2.2rem;
+  width: 2.4rem;
+  height: 2.4rem;
   border-radius: 50%;
   background: var(--green-mid);
   color: var(--white);
   font-weight: 700;
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -338,11 +424,119 @@ body {
   font-weight: 700;
 }
 
+.course-info h4 a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: var(--gold);
+  text-underline-offset: 3px;
+}
+
+.course-info h4 a:hover {
+  color: var(--green-mid);
+}
+
 .course-info p {
   font-size: 0.82rem;
   color: var(--gray-text);
   font-style: italic;
+  margin-top: 0.15rem;
 }
+
+/* ── Guide Pages (St. Andrews / Edinburgh) ── */
+.guide-section { margin-bottom: 3rem; }
+
+.guide-group {
+  margin-bottom: 2.25rem;
+}
+
+.guide-group-title {
+  font-size: 1.1rem;
+  color: var(--green-dark);
+  font-weight: 700;
+  margin-bottom: 0.9rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 2px solid var(--gray-mid);
+}
+
+.guide-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.guide-item {
+  background: var(--white);
+  border-radius: 10px;
+  padding: 0.9rem 1.2rem;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.07);
+  border-left: 4px solid var(--green-mid);
+}
+
+.guide-item-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 0.25rem;
+}
+
+.guide-item-header strong {
+  color: var(--green-dark);
+  font-size: 0.97rem;
+}
+
+.guide-item p {
+  font-size: 0.85rem;
+  color: var(--gray-text);
+  font-style: italic;
+}
+
+.guide-tag {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  background: var(--green-mid);
+  color: var(--white);
+  padding: 0.2rem 0.55rem;
+  border-radius: 4px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+/* ── Inner Tabs (Day Cards) ── */
+.inner-tabs {
+  display: flex;
+  gap: 0.25rem;
+  margin-bottom: 1.1rem;
+  border-bottom: 2px solid var(--gray-mid);
+}
+
+.inner-tab-btn {
+  background: none;
+  border: none;
+  font-family: Georgia, serif;
+  font-size: 0.82rem;
+  letter-spacing: 0.05em;
+  color: var(--gray-text);
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  border-bottom: 3px solid transparent;
+  margin-bottom: -2px;
+  transition: color 0.15s, border-color 0.15s;
+}
+
+.inner-tab-btn:hover { color: var(--green-mid); }
+
+.inner-tab-btn.active {
+  color: var(--green-dark);
+  font-weight: 700;
+  border-bottom-color: var(--gold);
+}
+
+.inner-tab-panel { display: none; }
+.inner-tab-panel.active { display: block; }
 
 /* ── Footer ── */
 .site-footer {

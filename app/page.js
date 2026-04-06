@@ -2,6 +2,9 @@
 
 import { useState } from 'react'
 import { useRouter } from 'next/navigation'
+import dynamic from 'next/dynamic'
+
+const TripMap = dynamic(() => import('./map/MapClient'), { ssr: false })
 
 export default function HomePage() {
   const router = useRouter()
@@ -35,6 +38,7 @@ export default function HomePage() {
             { id: 'standrews', label: 'St. Andrews' },
             { id: 'edinburgh', label: 'Edinburgh' },
             { id: 'gallery', label: 'Photos' },
+            { id: 'map', label: 'Map' },
           ].map(tab => (
             <button
               key={tab.id}
@@ -741,6 +745,11 @@ export default function HomePage() {
               </div>
             </div>
           </section>
+        </div>
+
+        {/* ── Map Tab ── */}
+        <div className={`tab-panel ${activeTab === 'map' ? 'active' : ''}`}>
+          {activeTab === 'map' && <TripMap />}
         </div>
 
       </main>

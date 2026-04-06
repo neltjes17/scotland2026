@@ -34,7 +34,7 @@ export default function HomePage() {
             { id: 'courses', label: 'Courses at a Glance' },
             { id: 'standrews', label: 'St. Andrews' },
             { id: 'edinburgh', label: 'Edinburgh' },
-            { id: 'gallery', label: 'Gallery' },
+            { id: 'gallery', label: 'Photos' },
           ].map(tab => (
             <button
               key={tab.id}

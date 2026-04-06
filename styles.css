@@ -276,6 +276,15 @@ body {
   margin-top: 0.1rem;
 }
 
+.activity-thumb {
+  width: 80px;
+  height: 54px;
+  object-fit: cover;
+  border-radius: 6px;
+  flex-shrink: 0;
+  margin-top: 0.1rem;
+}
+
 .activity div strong {
   display: block;
   font-size: 0.97rem;

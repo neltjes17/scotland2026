@@ -283,6 +283,17 @@ body {
   font-weight: 700;
 }
 
+.activity div strong a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: var(--gold);
+  text-underline-offset: 3px;
+}
+
+.activity div strong a:hover {
+  color: var(--green-mid);
+}
+
 .activity div p {
   font-size: 0.85rem;
   color: var(--gray-text);

@@ -5,6 +5,7 @@ import { useState, useRef } from 'react'
 const TAGS = [
   { id: 'st-andrews', label: 'St Andrews' },
   { id: 'kingsbarns', label: 'Kingsbarns' },
+  { id: 'dumbarnie-links', label: 'Dumbarnie Links' },
   { id: 'eden-course', label: 'Eden Course' },
   { id: 'castle-course', label: 'Castle Course' },
   { id: 'old-course', label: 'Old Course' },
